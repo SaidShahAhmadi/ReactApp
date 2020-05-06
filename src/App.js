@@ -6,7 +6,7 @@ import MyInfo from "./practice/crash";
 function App() {
   return (
     <main className="container">
-      <MyInfo /> {/* <Movies /> */}
+      <Movies />
     </main>
   );
 }

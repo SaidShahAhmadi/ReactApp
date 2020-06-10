@@ -25,7 +25,6 @@ class LoginForm extends Form {
           <div className="col-3"></div>
           <div className="col-4">
             <h2>Login </h2>
-
             <form onSubmit={this.handleSubmit}>
               {this.renderInput("username", "Username")}
               {this.renderInput("password", "Password", "password")}

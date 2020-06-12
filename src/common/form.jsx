@@ -11,7 +11,6 @@ class Form extends Component {
   validate = () => {
     const options = { abortEarly: false };
     const result = Joi.validate(this.state.data, this.schema, options);
-
     //if result false then return null otherwase
     if (!result.error) return null;
 

@@ -6,6 +6,7 @@ import Customers from "./componets/customers";
 import Rentals from "./componets/rentals";
 import NotFound from "./componets/not-found";
 import NavBar from "./componets/navbar";
+import RegisterForm from "./componets/registerForm";
 import LoginForm from "./componets/loginForm";
 import "./App.css";
 
@@ -16,6 +17,7 @@ function App() {
       <main className="container">
         {/* <Movies /> */}
         <Switch>
+          <Route path="/register" component={RegisterForm} />
           <Route path="/login" component={LoginForm} />
           <Route path="/movies/:id" component={MovieForm} />
           <Route path="/movies" component={Movies}></Route>

@@ -53,7 +53,7 @@ class Movies extends Component {
   handleGenreSelect = (genre) => {
     this.setState({ selectedGenre: genre, searchQuery: "", currentPage: 1 });
   };
-  //
+
   handleSearch = (query) => {
     this.setState({ searchQuery: query, selectedGenre: null, currentPage: 1 });
   };

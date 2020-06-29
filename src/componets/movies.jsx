@@ -37,9 +37,11 @@ class Movies extends Component {
 
     try {
       await deleteMovies(movie._id);
+      // toast.error("This movie has been deleted.");
     } catch (ex) {
-      if (ex.response && ex.response.status === 404)
-        toast.info("This movies has already been deleted");
+      if (ex.response && ex.response.status === 404) console.log("x");
+      toast.error("This movie has already been deleted.");
+
       this.setState({ movies: originalMovies });
     }
   };
@@ -113,6 +115,7 @@ class Movies extends Component {
     //object Destracturing
     const { length: count } = this.state.movies;
     const { pageSize, currentPage, sortColumn, searchQuery } = this.state;
+    const { user } = this.props;
 
     if (count === 0) return <p id="red">There are no movies in database.</p>;
 
@@ -129,13 +132,15 @@ class Movies extends Component {
         </div>
 
         <div className="col">
-          <Link
-            to="/movies/new"
-            className="btn btn-primary"
-            style={{ marginBottom: 20 }}
-          >
-            New Movie
-          </Link>
+          {user && (
+            <Link
+              to="/movies/new"
+              className="btn btn-primary"
+              style={{ marginBottom: 20 }}
+            >
+              New Movie
+            </Link>
+          )}
           <p>Shoing {totalCount} movies in the database</p>
 
           {/* searchbox Component */}
